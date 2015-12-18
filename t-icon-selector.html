@@ -40,6 +40,20 @@
     paper-dialog-scrollable {
         margin: 0;
     }
+
+    t-input {
+        width: 100%;
+    }
+
+    .iconWrapper {
+        position: relative;
+    }
+
+    .inputIcon {
+        position: absolute;
+        bottom: 11px;
+        right: 12px;
+    }
     </style>
     <template>
         <iron-meta type="iconset" list="{{iconsets}}"></iron-meta>
@@ -65,8 +79,9 @@
                 <paper-button dialog-confirm autofocus>OK</paper-button>
             </div>
         </paper-dialog>
-        <div class="horizontal layout">
-            <t-input label="Choose Icon" value="{{value}}" on-click="_openDialog"></t-input>
+        <div class="horizontal layout iconWrapper">
+            <t-input value="{{value}}" label="Choose Icon" on-click="_openDialog"></t-input>
+            <iron-icon class="inputIcon" icon="{{value}}"></iron-icon>
         </div>
     </template>
 </dom-module>
